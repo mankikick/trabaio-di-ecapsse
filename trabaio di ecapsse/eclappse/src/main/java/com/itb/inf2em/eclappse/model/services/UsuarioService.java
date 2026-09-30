@@ -30,7 +30,9 @@ public class UsuarioService {
     // 3. Salvar novo usuário
     @Transactional
     public Usuario save(Usuario usuario) {
-        usuario.setStatusConta(true);
+        if (usuario.getStatusConta() == null) {
+            usuario.setStatusConta("ATIVO");
+        }
         return usuarioRepository.save(usuario);
     }
 
@@ -47,11 +49,10 @@ public class UsuarioService {
         if (usuario.getTelefone() != null) usuarioExistente.setTelefone(usuario.getTelefone());
         if (usuario.getFoto() != null) usuarioExistente.setFoto(usuario.getFoto());
         if (usuario.getPerfil() != null) usuarioExistente.setPerfil(usuario.getPerfil());
+        if (usuario.getStatusConta() != null) usuarioExistente.setStatusConta(usuario.getStatusConta());
         if (usuario.getTokenConfirmacao() != null) usuarioExistente.setTokenConfirmacao(usuario.getTokenConfirmacao());
         if (usuario.getTokenRecuperacao() != null) usuarioExistente.setTokenRecuperacao(usuario.getTokenRecuperacao());
         if (usuario.getExpiracaoToken() != null) usuarioExistente.setExpiracaoToken(usuario.getExpiracaoToken());
-
-        usuarioExistente.setStatusConta(usuario.isStatusConta());
 
         return usuarioRepository.save(usuarioExistente);
     }

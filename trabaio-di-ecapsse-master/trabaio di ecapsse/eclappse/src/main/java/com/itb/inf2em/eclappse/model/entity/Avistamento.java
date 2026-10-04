@@ -17,7 +17,7 @@ public class Avistamento {
     private Usuario colaborador;
     @Column(name = "data_avistamento", nullable = false)
     private LocalDateTime dataAvistamento;
-    @Column(name = "descricao_detalhada", nullable = false, columnDefinition = "VARCHAR(MAX)")
+    @Column(name = "descricao_detalhada", nullable = false, columnDefinition = "TEXT")
     private String descricaoDetalhada;
     @Column(nullable = false, length = 100)
     private String logradouro;
@@ -37,7 +37,7 @@ public class Avistamento {
     private String latitude;
     @Column(length = 100)
     private String longitude;
-    @Column(name = "foto_evidencia", columnDefinition = "VARBINARY(MAX)")
+    @Column(name = "foto_evidencia", columnDefinition = "BLOB")
     private byte[] fotoEvidencia;
     @Column(name = "status_avistamento", nullable = false, length = 20)
     private String statusAvistamento = "EM_ANALISE";

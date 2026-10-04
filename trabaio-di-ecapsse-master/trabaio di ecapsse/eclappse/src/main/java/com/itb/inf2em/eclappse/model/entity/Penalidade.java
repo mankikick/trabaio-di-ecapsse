@@ -17,7 +17,7 @@ public class Penalidade {
     private Usuario admin;
     @Column(name = "tipo_penalidade", nullable = false, length = 30)
     private String tipoPenalidade;
-    @Column(nullable = false, columnDefinition = "VARCHAR(MAX)")
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String motivo;
     @Column(name = "data_inicio", nullable = false)
     private LocalDateTime dataInicio;

@@ -20,6 +20,14 @@ public class UsuarioController {
         return service.findAll();
     }
 
+    @PostMapping("/login")
+    public Usuario login(@RequestBody LoginRequest request) {
+        return service.login(request.email(), request.password());
+    }
+
+    public record LoginRequest(String email, String password) {
+    }
+
     @GetMapping("/{id}")
     public Usuario findById(@PathVariable Long id) {
         return service.findById(id);

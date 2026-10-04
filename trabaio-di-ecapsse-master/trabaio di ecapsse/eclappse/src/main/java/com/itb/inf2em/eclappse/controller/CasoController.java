@@ -35,6 +35,11 @@ public class CasoController {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.save(obj));
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Caso> update(@PathVariable Long id, @RequestBody Caso obj) {
+        return service.update(id, obj).map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {

@@ -1,5 +1,9 @@
 HELP.md
 target/
+eclappse.db
+eclappse.db-*
+*.db-journal
+
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/

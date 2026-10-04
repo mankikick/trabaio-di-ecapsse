@@ -21,17 +21,17 @@ public class Caso {
     private LocalDate dataDesaparecimento;
     @Column(name = "local_desaparecimento", nullable = false, length = 255)
     private String localDesaparecimento;
-    @Column(name = "caracteristicas_fisicas", columnDefinition = "VARCHAR(MAX)")
+    @Column(name = "caracteristicas_fisicas", columnDefinition = "TEXT")
     private String caracteristicasFisicas;
-    @Column(name = "circunstancias", columnDefinition = "VARCHAR(MAX)")
+    @Column(name = "circunstancias", columnDefinition = "TEXT")
     private String circunstancias;
-    @Column(name = "foto", columnDefinition = "VARBINARY(MAX)")
+    @Column(name = "foto", columnDefinition = "BLOB")
     private byte[] foto;
     @Column(name = "status_caso", nullable = false, length = 30)
     private String statusCaso = "ATIVO";
     @Column(name = "solicitacao_exclusao", nullable = false)
     private boolean solicitacaoExclusao = false;
-    @Column(name = "motivo_exclusao", columnDefinition = "VARCHAR(MAX)")
+    @Column(name = "motivo_exclusao", columnDefinition = "TEXT")
     private String motivoExclusao;
     @Column(name = "data_registro", nullable = false, updatable = false)
     private LocalDateTime dataRegistro;

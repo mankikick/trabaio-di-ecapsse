@@ -1,6 +1,7 @@
 package com.itb.inf2em.eclappse.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
@@ -16,15 +17,15 @@ public class Usuario {
     private String email;
     @Column(nullable = false, length = 100, unique = true)
     private String username;
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(nullable = false, length = 255)
     private String password;
     @JsonIgnore
-    @Column(columnDefinition = "CHAR(11)", unique = true)
+    @Column(length = 11, unique = true)
     private String cpf;
     @Column(length = 20)
     private String telefone;
-    @Column(columnDefinition = "VARBINARY(MAX)")
+    @Column(columnDefinition = "BLOB")
     private byte[] foto;
     @Column(nullable = false, length = 30)
     private String perfil;

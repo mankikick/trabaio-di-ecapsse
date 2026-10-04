@@ -14,7 +14,7 @@ public class Auditoria {
     private Usuario usuario;
     @Column(nullable = false, length = 100)
     private String acao;
-    @Column(columnDefinition = "VARCHAR(MAX)")
+    @Column(columnDefinition = "TEXT")
     private String descricao;
     @Column(name = "ip_origem", length = 45)
     private String ipOrigem;

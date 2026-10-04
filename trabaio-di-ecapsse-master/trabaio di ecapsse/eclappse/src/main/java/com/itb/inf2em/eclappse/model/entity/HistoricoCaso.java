@@ -19,7 +19,7 @@ public class HistoricoCaso {
     private String statusAnterior;
     @Column(name = "status_novo", nullable = false, length = 30)
     private String statusNovo;
-    @Column(name = "descricao_alteracao", nullable = false, columnDefinition = "VARCHAR(MAX)")
+    @Column(name = "descricao_alteracao", nullable = false, columnDefinition = "TEXT")
     private String descricaoAlteracao;
     @Column(name = "data_registro", nullable = false, updatable = false)
     private LocalDateTime dataRegistro;
